@@ -94,7 +94,7 @@ function highlightHtml() {
     $('#next-until-button').click(function (e) { 
         e.preventDefault();
         resetHtml();
-        $('#target').nextUntil('.flag').addClass(className);
+        $('#target').nextUntil('.flag').addClass('highlight');
         displayHtml();
     });
 }
