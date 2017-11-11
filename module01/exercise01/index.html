@@ -10,15 +10,80 @@
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
         crossorigin="anonymous">
+    <!-- Additional CSS-->
+    <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body> 
-    <div class="jumbotron">
-        <h1 class="display-3">Hello World!</h1>
-        <p class="lead" id="info"></p>
-        <hr class="my-2">
-        <p class="lead">
-            <a class="btn btn-primary btn-lg" href="Jumbo action link" role="button">Jumbo action name</a>
+<body>
+    <h3>CSS selector and jQuery</h3>
+    <p>
+        Below is an interactive demonstration of a few CSS selectors and how they behave in jQuery. The text on the buttons is the
+        jQuery selector syntax used. Clicking on each button will highlight the elements indicated by the selector.
+    </p>
+    <div class="row">
+        <div class="col-md-2 offset-md-1">
+            <p>
+                <strong>Element examples</strong>
+            </p>
+            <input name="nav-button" id="nav-button" class="btn btn-success mb-2 mr-2" type="button" value="nav">
+            <input name="section-button" id="section-button" class="btn btn-success mb-2 mr-2" type="button" value="section">
+
+            <p>
+                <strong>Class examples</strong>
+            </p>
+            <input name="first-button" id="first-button" class="btn btn-success mb-2 mr-2" type="button" value=".first">
+            <input name="second-button" id="second-button" class="btn btn-success mb-2 mr-2" type="button" value=".second">
+            <input name="third-button" id="div-second-button" class="btn btn-success mb-2 mr-2" type="button" value="div.second">
+            <input name="fourth-button" id="span-second-button" class="btn btn-success mb-2 mr-2" type="button" value="span.second">
+
+            <p>
+                <strong>Hierachy examples</strong>
+            </p>
+            <input name="navdivdescendent-button" id="navdivdescendent-button" class="btn btn-success mb-2 mr-2" type="button" value="nav div">
+            <input name="navdivdirect-button" id="navdivdirect-button" class="btn btn-success mb-2 mr-2" type="button" value="nav > div">
+
+            <p>
+                <strong>Attributes examples</strong>
+            </p>
+            <input name="attribute-equality-button" id="attribute-equality-button" class="btn btn-success mb-2 mr-2" type="button" value="[data-bind='demo']">
+            <input name="attribute-starts-button" id="attribute-starts-button" class="btn btn-success mb-2 mr-2" type="button" value="[data-bind^='another']">
+            <input name="attribute-contains-button" id="attribute-contains-button" class="btn btn-success mb-2 mr-2" type="button" value="[data-bind*='demo']">
+        </div>
+        <div class="col-md-7">
+            <p>
+                <strong>HTML</strong>
+            </p>
+            <div id="html-content">
+                <div class="first"></div>
+                <nav>
+                    <div></div>
+                    <section>
+                        <div class="second"></div>
+                        <div data-bind="demo"></div>
+                        <div data-bind="another-demo"></div>
+                    </section>
+                </nav>
+                <span class="second"></span>
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <h4>Notes</h4>
+        <p>
+            You can review the jQuery used to create this demo. You will notice that each click event handler has a call to a helper
+            function to clear the highlight. This exists because there is no guaranteed order of event handler execution,
+            so there isn't a way to ensure the
+            <i>highlight</i> class is removed before it's added onto the appropriate items.
+        </p>
+        <p>
+            It's also worth highlighting that you could make all of the buttons dynamic, reading the text on each button and passing
+            tha value into jQuery. I didn't want to do that as I wanted to show the actual jQuery syntax in the source code.
+        </p>
+        <p>
+            Speaking of code cleanup, you will also notice the displayHtml helper function, which maintains the sample HTML while also
+            displaying it on the page. This was created as a way to show the HTML and make the demonstration easier to understand.
+            There are other third party plugins that can do things like that, and they probably use cleaner code than I wrote.
+            ;-) My goal was to simply provide a nice little interactive demo.
         </p>
     </div>
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
