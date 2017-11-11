@@ -1,0 +1,21 @@
+.highlight {
+  background-color: #FFFF88;
+}
+
+.tag {
+  color: blue;
+}
+
+.attribute-value {
+  color: maroon;
+}
+
+.btn {
+  margin-bottom: 5px;
+  font-family:consolas;
+}
+
+#html-content, .html-content {
+  font-family: consolas;
+  font-size: 1.2em;
+}

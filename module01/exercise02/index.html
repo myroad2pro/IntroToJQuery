@@ -1,0 +1,104 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+    <title>Home Page</title>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb"
+        crossorigin="anonymous">
+    <!-- Additional CSS -->
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <h3>jQuery tree traversal methods</h3>
+    <p>A demonstration of some common jQuery tree traversal methods.</p>
+    <p>As you can see, the buttons have the jQuery code that will be executed when clicking on the button. The div element with
+        the ID of
+        <em>target</em> will be the starting point for all of the demos. The
+        <em>flag</em> class is simply used as a demo class to show off the prevUntil and nextUntil methods.</p>
+    <div class="row">
+        <div class="col-sm-4 col-sm-offset-1">
+            <p>
+                <strong>Next and previous</strong>
+            </p>
+            <p>prev() and next() move to either the prior or next element, respectively.</p>
+
+            <div class="btn btn-success" id="prev-button">$('#target').prev().addClass('highlight');</div>
+            <div class="btn btn-success" id="next-button">$('#target').next().addClass('highlight');</div>
+
+            <p>
+                <strong>prevAll and nextAll</strong>
+            </p>
+            <p>prevAll() and nextAll() will select all siblings (elements on the same level of the DOM hierarchy) prior to or
+                after the current element, respectively.
+                <p>
+
+                    <div class="btn btn-success" id="prev-all-button">$('#target').prevAll().addClass('highlight');</div>
+
+                    <div class="btn btn-success" id="next-all-button">$('#target').nextAll().addClass('highlight');</div>
+
+                    <p>
+                        <strong>prevUntil and nextUntil</strong>
+                    </p>
+
+                    <p>prevUntil and nextUntil will select all elements before or after the current element, upto but
+                        <strong>not including</strong> the element that matches the selector passed into the method.</p>
+
+                    <div class="btn btn-success" id="prev-until-button">$('#target').prevUntil('.flag').addClass('highlight');</div>
+
+                    <div class="btn btn-success" id="next-until-button">$('#target').nextUntil('.flag').addClass('highlight');</div>
+        </div>
+        <div class="col-sm-7">
+            <p>
+                <strong>HTML</strong>
+            </p>
+            <div id="html-content">
+                <div class='parent'>
+                    <div class="flag">First</div>
+                    <div>Second</div>
+                    <div>Third</div>
+                    <div id="target">Fourth</div>
+                    <div>Fifth</div>
+                    <div>Sixth</div>
+                    <div class="flag">Seventh</div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <h4>Notes</h4>
+    <p>
+        You can review the jQuery used to create this demo. You will notice that each click event handler has a call to a helper
+        function to clear the highlight. This exists because there is no guaranteed order of event handler execution, so
+        there isn't a way to ensure the
+        <i>highlight</i> class is removed before it's added onto the appropriate items.
+    </p>
+    <p>
+        It's also worth highlighting that you could make all of the buttons dynamic, reading the text on each button and passing
+        tha value into jQuery. I didn't want to do that as I wanted to show the actual jQuery syntax in the source code.
+    </p>
+    <p>
+        Speaking of code cleanup, you will also notice the displayHtml helper function, which maintains the sample HTML while also
+        displaying it on the page. This was created as a way to show the HTML and make the demonstration easier to understand.
+        There are other third party plugins that can do things like that, and they probably use cleaner code than I wrote.
+        ;-) My goal was to simply provide a nice little interactive demo.
+    </p>
+    <p>I have offloaded the CSS and utility JavaScript to
+        <a href="https://codepen.io/GeekTrainer/pen/xGBvYK">this pen</a>.</p>
+
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
+        crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.3/umd/popper.min.js" integrity="sha384-vFJXuSJphROIrBnz7yo7oB41mKfc8JzQZiCq4NCceLEaO4IHwicKwpJf9c9IpFgh"
+        crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/js/bootstrap.min.js" integrity="sha384-alpBpkh1PFOepccYVYDB4do5UnbKysX5WZXm3XxPqe5iKTfUKjNkCk9SaVuEZflJ"
+        crossorigin="anonymous"></script>
+    <!-- Optional JavaScript -->
+    <script src="js/script.js"></script>
+</body>
+
+</html>
